@@ -1,0 +1,239 @@
+*,
+html,
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper-menu {
+    position: relative;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+@media (max-width: 480px) {
+    .menu {
+        width: 100%;
+    }
+}
+
+.menu li {
+    list-style: none;
+}
+
+.submenu {
+    /* background-color: white; */
+}
+
+.submenu:not(:first-child) {
+    border-top: 1px solid #ededed;
+}
+
+.submenu:first-child {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+@media (max-width: 480px) {
+    .submenu:first-child {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+}
+
+.submenu:last-child {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding-bottom: 5px;
+}
+
+.submenu__link {
+    display: flex;
+    align-items: center;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #616161;
+    text-decoration: none;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+.submenu--active .submenu__link {
+    background-color: #e6f9ff;
+}
+
+.submenu__link div {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 7px;
+}
+
+.submenu__link::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-image: url(arrow-left.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: auto;
+
+    transform: rotate(90deg);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+    .submenu__link::after {
+        transform: rotate(0);
+    }
+}
+
+.submenu--active .submenu__link::after {
+    transform: rotate(0);
+}
+
+@media (max-width: 480px) {
+    .submenu--active .submenu__link::after {
+        transform: rotate(90deg);
+    }
+}
+
+.submenu__items {
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    padding: 27px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+@media (max-width: 480px) {
+    .submenu__items {
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+.submenu__items::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+}
+
+@media (max-width: 480px) {
+    .submenu__items::after {
+        /* z-index: 0; */
+    }
+}
+
+.submenu--cement .submenu__items::after {
+    background-image: url(bg1.png);
+    opacity: 0.5;
+    background-position: 175px 175px;
+}
+
+@media (max-width: 480px) {
+    .submenu--cement .submenu__items::after {
+        background-size: 75%;
+        background-position: calc(35vw) calc(100% + 25px);
+    }
+}
+
+.submenu--active .submenu__items {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    flex-direction: column;
+    column-gap: 85px;
+    flex-wrap: wrap;
+    top: 0;
+    left: 325px;
+    width: 965px;
+    height: 585px;
+    padding-right: 25%;
+}
+
+@media (max-width: 480px) {
+    .submenu--active .submenu__items {
+        position: relative;
+        left: 0;
+        width: 100%;
+    }
+}
+
+.submenu__items > li {
+    width: 50%;
+    /* background-color: tomato; */
+}
+
+.submenu__items-link {
+    /* padding-top: 8px; */
+    padding-bottom: 16px;
+    display: block;
+}
+
+.submenu__items li ul {
+    padding: 0;
+}
+.submenu__items li div {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.submenu__items li div::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #039be5;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.submenu__items li a {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 22px;
+    color: #616161;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+@media (max-width: 440px) {
+    .submenu__items li a {
+        white-space: normal;
+    }
+}
