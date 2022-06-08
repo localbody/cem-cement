@@ -372,6 +372,13 @@ body {
 
 .submenu__items > li {
   width: 45%;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1299px) {
+  .submenu__items > li {
+    margin-bottom: 24px;
+  }
 }
 
 .submenu__items-link {
@@ -398,6 +405,7 @@ body {
 .submenu__items li ul {
   padding: 0;
 }
+
 .submenu__items li div {
   font-family: 'Oswald';
   font-style: normal;
