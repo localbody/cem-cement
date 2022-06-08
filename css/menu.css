@@ -375,9 +375,24 @@ body {
 }
 
 .submenu__items-link {
-  /* padding-top: 8px; */
-  padding-bottom: 16px;
-  display: block;
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 32px;
+  color: #616161;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 1299px) {
+  .submenu__items-link {
+    white-space: normal;
+  }
+}
+
+.submenu__items-link:hover {
+  border-bottom: 2px solid rgb(3, 155, 229);
 }
 
 .submenu__items li ul {
@@ -401,21 +416,4 @@ body {
   border-radius: 8px;
   margin-top: 8px;
   margin-bottom: 8px;
-}
-
-.submenu__items li a {
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 22px;
-  color: #616161;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-@media (max-width: 1299px) {
-  .submenu__items li a {
-    white-space: normal;
-  }
 }
