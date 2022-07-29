@@ -48,6 +48,13 @@ function onLoad() {
           activeSubmenu.classList.remove('submenu--active')
         }
         submenu.classList.add('submenu--active')
+
+        console.log(submenu, submenu.offsetTop)
+
+        window.scrollTo({
+          top: submenu.offsetTop,
+          behavior: 'smooth',
+        })
         onResize()
       }
     }
